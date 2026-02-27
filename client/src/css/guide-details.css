@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    margin:0;
+    padding:0;
+}
+
+.details-container{
+    max-width:900px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.details-card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.1);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    transition:0.3s ease;
+}
+
+.details-card::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background: linear-gradient(45deg, rgba(255,167,38,0.15), rgba(255,183,77,0.15));
+    top:-50%;
+    left:-50%;
+    transform:rotate(25deg);
+    pointer-events:none;
+}
+
+.details-card:hover{
+    transform: translateY(-5px);
+}
+
+.details-card img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:20px;
+    border:5px solid #ffa726;
+    transition:0.3s ease;
+}
+
+.details-card img:hover{
+    transform: scale(1.05);
+}
+
+.details-card h1{
+    font-size:36px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.details-card p{
+    font-size:16px;
+    color:#555;
+    line-height:1.6;
+}
+
+.subtitle{
+    font-weight:600;
+    margin-top:20px;
+}
+
+.rating{
+    font-size:22px;
+    margin:15px 0;
+}
+
+.rating span{
+    display:inline-block;
+    animation: star-glow 1.5s infinite;
+}
+
+@keyframes star-glow{
+    0%,100% { color:#f39c12; transform:scale(1);}
+    50% { color:#ffb74d; transform:scale(1.2);}
+}
+
+/* ================= Skills ================= */
+.skills{
+    margin:25px 0;
+    text-align:left;
+}
+
+.skill{
+    margin-bottom:15px;
+}
+
+.skill span{
+    font-size:14px;
+    font-weight:500;
+    color:#555;
+}
+
+.skill-bar{
+    width:100%;
+    background:#ffe0b2;
+    border-radius:10px;
+    height:12px;
+    margin-top:5px;
+    overflow:hidden;
+}
+
+.skill-bar .fill{
+    height:100%;
+    background: #ffa726;
+    border-radius:10px;
+    transition:0.8s ease;
+}
+
+/* ================= Contact CTA ================= */
+.btn-contact{
+    display:inline-block;
+    margin:20px 0 15px 0;
+    padding:14px 28px;
+    background: linear-gradient(135deg, #ffa726, #ffb74d);
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(255,167,38,0.4);
+    transition:0.3s ease;
+}
+
+.btn-contact:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(255,167,38,0.5);
+}
+
+/* ================= Social Links ================= */
+.socials{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:20px 0;
+}
+
+.socials a img{
+    width:35px;
+    height:35px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.socials a img:hover{
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px #ffa726);
+}
+
+/* ================= Back Button ================= */
+.btn-back{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#ffa726;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.btn-back:hover{
+    background:#fb8c00;
+    transform:translateY(-2px);
+}
+
+/* ================= Responsive ================= */
+@media(max-width:768px){
+    .details-card{
+        padding:30px 20px;
+    }
+
+    .details-card img{
+        width:200px;
+        height:200px;
+    }
+}
+
+@media(max-width:480px){
+    .details-card h1{
+        font-size:28px;
+    }
+
+    .skills{
+        text-align:center;
+    }
+}

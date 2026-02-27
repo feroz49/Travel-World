@@ -1,26 +1,33 @@
-import { Outlet, Route, Routes } from 'react-router';
-import BaseLayout from './views/BaseLayout';
+import { Routes, Route } from 'react-router-dom';
 import Home from './views/Home';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import About from './views/about';
+import Login from './views/login';
+import Register from './views/register';
+import Contact from './views/contact';
+import GuideDetails from './views/guide-details'; // Importing the GuideDetails component
+import TourGuide from './views/tourguide';
+import ResetPassword from './views/reset-password'; // Importing the ResetPassword component
+import ForgotPassword from './views/forgot-password'; // Importing the ForgotPassword component
+
+
 import { Toaster } from 'react-hot-toast';
-import Sessions from './views/Sessions';
 
 function App() {
   return (
     <>
       <Routes>
-        <Route
-          element={
-            <BaseLayout>
-              <Outlet />
-            </BaseLayout>
-          }
-        >
-          <Route path={'/'} element={<Home />} />
-          <Route path={'/sessions'} element={<Sessions />} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Register />} />
+        <Route path="/contact" element={<Contact />} />
+        {/* <Route path="/guide/:id" element={<GuideDetails guide={{} as Guide} />} /> */}
+        <Route path="/tourguide" element={<TourGuide guides={[]} />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
+
       <Toaster
         position="top-center"
         toastOptions={{
