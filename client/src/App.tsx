@@ -5,7 +5,7 @@ import Login from './views/login';
 import Register from './views/register';
 import Contact from './views/contact';
 import TourGuide from './views/tourguide';
-//import ResetPassword from './views/reset-password';
+import ResetPassword from './views/reset-password';
 import ForgotPassword from './views/forgot-password';
 import Profile from './views/profile';
 import Navbar from './components/Navbar';
@@ -27,6 +27,7 @@ function App() {
     }
   }, [location]);
 
+
   return (
     <>
       <Navbar theme={navbarTheme} />
@@ -39,7 +40,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/tourguide" element={<TourGuide guides={[]} />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        {/* <Route path="/reset-password" element={<ResetPassword />} /> */}
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
 
