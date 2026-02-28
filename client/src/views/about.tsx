@@ -2,7 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView, AnimatePresence, easeOut } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../css/about.css";
-
+import rk from "../images/rk.jpeg";
+import sk from "../images/sk.jpeg";
+import tr from "../images/tr.jpeg";
 // Animation variants
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -99,38 +101,38 @@ const About: React.FC = () => {
 
   // Team data
   const teamMembers = [
-    { name: "Sarah Johnson", role: "Founder & CEO", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" },
-    { name: "Michael Chen", role: "Head of Operations", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" },
-    { name: "Emma Williams", role: "Lead Travel Designer", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80" },
-    { name: "David Rodriguez", role: "Guide Coordinator", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" }
+    { name: "Sk Khan", role: "Founder & CEO", image:sk},
+    { name: "Tanmoy Chowdhury", role: "Head of Operations", image: tr },
+    { name: "Thouhid Islam", role: "Lead Travel Designer", image: rk }
+    //{ name: "David Rodriguez", role: "Guide Coordinator", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" }
   ];
 
   // Testimonials data
   const testimonials = [
     { 
-      name: "Alice Thompson", 
+      name: "Arnab", 
       quote: "TravelWorld transformed my vacation into an unforgettable journey. The guides were exceptional, and every moment felt personalized to my interests.",
-      location: "New York, USA"
+      location: "Dhaka, Bangladesh"
     },
     { 
-      name: "Marco Silva", 
+      name: "Rayyan Ahmed", 
       quote: "As a solo traveler, I was nervous about my first international trip. TravelWorld connected me with an amazing local guide who made all the difference.",
-      location: "São Paulo, Brazil"
+      location: "Gazipur, Bangladesh"
     },
     { 
-      name: "Sophie Anderson", 
+      name: "Arham Khan", 
       quote: "The sustainable tourism focus resonated with me. We not only explored beautiful places but also contributed positively to local communities.",
-      location: "London, UK"
+      location: "Chittagong, Bangladesh"
     },
     { 
-      name: "James Kim", 
+      name: "Naira Rahman", 
       quote: "From the stunning landscapes to the authentic cultural experiences, every detail was perfectly orchestrated. Truly a premium travel experience!",
-      location: "Seoul, South Korea"
+      location: "Dhaka, Bangladesh"
     },
     { 
-      name: "Elena Petrov", 
+      name: "Tazkia Islam", 
       quote: "I've traveled with many agencies, but TravelWorld's attention to detail and personal touch is unmatched. Already planning my next adventure!",
-      location: "Moscow, Russia"
+      location: "Rajshahi, Bangladesh"
     }
   ];
 

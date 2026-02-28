@@ -116,11 +116,11 @@ const Login: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <div className="login-logo">
+            {/* <div className="login-logo">
               <span className="logo-icon">🌍</span>
               <h1>TravelWorld</h1>
-            </div>
-            <h2>Welcome Back! 👋</h2>
+            </div> */}
+            <h2>Welcome</h2>
             <p className="login-subtitle">Login to continue your adventure</p>
           </motion.div>
 
