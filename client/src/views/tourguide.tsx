@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Tourguide.css';
+import '../css/tourguide.css';
 
 interface Guide {
   id: number | string;
@@ -15,23 +15,7 @@ interface TourGuideProps {
 
 const TourGuide: React.FC<TourGuideProps> = ({ guides }) => {
   return (
-    <div>
-      {/* Navbar */}
-      <header className="navbar">
-        <div className="logo">
-          TRAVEL<span>WORLD</span>
-        </div>
-
-        <nav>
-          <a href="/">Home</a>
-          <a href="/about">About Us</a>
-          <a className="active" href="/tourguide">Tour Guide</a>
-          <a href="/contact">Contact</a>
-          <a href="/login">Login</a>
-          <a className="register-btn" href="/signup">Register</a>
-        </nav>
-      </header>
-
+    <div className="tourguide-page">
       <div className="tourguide-container">
 
         {/* Left side: Branding / Info */}

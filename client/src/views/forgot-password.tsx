@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import "../css/forgot-password.css";
 
 const ForgotPassword: React.FC = () => {
@@ -39,55 +41,134 @@ const ForgotPassword: React.FC = () => {
 
   return (
     <div className="auth-container">
-      {/* Left Side Branding */}
-      <div className="auth-left">
-        <div className="brand-content">
-          <h1>TravelWorld ✈️</h1>
-          <p>Reset your password and continue your journey with us.</p>
+      {/* Left Side - Travel Background - Sunset/City Theme for Forgot Password */}
+      <motion.div 
+        className="auth-left auth-left-forgot"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        <div className="auth-left-bg"></div>
+        <div className="auth-left-overlay"></div>
+        <div className="travel-elements">
+          <span>✈️</span>
+          <span>🌍</span>
+          <span>🏝️</span>
+          <span>🗺️</span>
+          <span>🌅</span>
+          <span>🏙️</span>
         </div>
-      </div>
+        <div className="brand-content">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            TravelWorld ✈️
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            Forgot your password? No worries! Reset it and continue your journey with us.
+          </motion.p>
+          <motion.div 
+            className="brand-features"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="feature-item">
+              <span>🌟</span> Premium Guides
+            </div>
+            <div className="feature-item">
+              <span>🛡️</span> Safe Travel
+            </div>
+            <div className="feature-item">
+              <span>💫</span> Unforgettable Experiences
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
 
       {/* Right Side Form */}
-      <div className="auth-right">
+      <motion.div 
+        className="auth-right"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="form-box">
-          <h2>
-            Forgot <span>Password?</span>
-          </h2>
-          <p className="subtitle">Enter your email to receive a reset link</p>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <h2>Forgot <span>Password?</span></h2>
+            <p className="subtitle">Enter your email to receive a reset link</p>
+          </motion.div>
 
-          {successMsg && <div className="alert success">{successMsg}</div>}
-          {errorMsg && <div className="alert error">{errorMsg}</div>}
+          {successMsg && <motion.div 
+            className="alert success"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+          >{successMsg}</motion.div>}
+          
+          {errorMsg && <motion.div 
+            className="alert error"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+          >{errorMsg}</motion.div>}
 
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>Email Address</label>
+            <motion.div 
+              className={`form-group ${validationMsg ? 'has-error' : ''}`}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+            >
               <input
                 type="email"
                 name="email"
                 value={email}
                 placeholder="Enter your email"
                 onChange={(e) => setEmail(e.target.value)}
-                required
+                className={validationMsg ? 'error' : ''}
+                id="forgot-email"
               />
-              {validationMsg && <small className="validation">{validationMsg}</small>}
-            </div>
+              <label htmlFor="forgot-email">Email Address</label>
+              <span className="input-icon">📧</span>
+              {validationMsg && <small className="error-text">{validationMsg}</small>}
+            </motion.div>
 
-            <button type="submit" className="btn-login">
+            <motion.button 
+              type="submit" 
+              className="btn-login"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
               Send Reset Link
-            </button>
+            </motion.button>
 
-            <div className="bottom-text">
-              Remembered your password? <a href="/login">Login</a>
-              <br />
-              <a href="/home" className="back-home">
-                ← Back to Homepage
-              </a>
-            </div>
+            <motion.div 
+              className="bottom-text"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <p>Remembered your password? <Link to="/login">Login</Link></p>
+              <Link to="/" className="back-home">← Back to Homepage</Link>
+            </motion.div>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 export default ForgotPassword;
+
