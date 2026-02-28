@@ -5,8 +5,8 @@ import Login from './views/login';
 import Register from './views/register';
 import Contact from './views/contact';
 import TourGuide from './views/tourguide';
-// import ResetPassword from './views/reset-password';
-//import Forgot-Password from './views/forgot-password';
+//import ResetPassword from './views/reset-password';
+import ForgotPassword from './views/forgot-password';
 import Profile from './views/profile';
 import Navbar from './components/Navbar';
 
@@ -38,7 +38,7 @@ function App() {
         <Route path="/signup" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/tourguide" element={<TourGuide guides={[]} />} />
-        {/* <Route path="/forgot-password" element={<Forgot-Password />} /> */}
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         {/* <Route path="/reset-password" element={<ResetPassword />} /> */}
         <Route path="/profile" element={<Profile />} />
       </Routes>
