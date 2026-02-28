@@ -1,0 +1,69 @@
+/* Global CSS Reset - Fixes horizontal overflow */
+
+/* ================= GLOBAL RESET ================= */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Fix for fixed navbar overlap */
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================= PREVENT HORIZONTAL OVERFLOW ================= */
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================= RESPONSIVE IMAGES ================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================= RESPONSIVE MEDIA ================= */
+video, canvas, iframe, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================= FIX FOR PSEUDO-ELEMENTS ================= */
+::before, ::after {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* ================= SCROLLBAR FIX ================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffa726;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffb74d;
+}
+

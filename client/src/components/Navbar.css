@@ -1,0 +1,649 @@
+/* Modern Navbar Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Base colors */
+  --nav-primary-dark: #0a1628;
+  --nav-primary-blue: #0f2847;
+  --nav-teal-dark: #134e5e;
+  --nav-teal-light: #1a6b7c;
+  --nav-accent: #ffa726;
+  --nav-accent-glow: #ffb74d;
+  --nav-accent-dark: #f57c00;
+  --nav-glass-bg: rgba(255, 255, 255, 0.08);
+  --nav-glass-border: rgba(255, 255, 255, 0.15);
+  --nav-text-light: #e8f4f8;
+  --nav-text-muted: #a3c4cc;
+  --nav-transition: all 0.3s ease;
+
+  /* Unique colors for each navigation button */
+  /* Home - Vibrant Red */
+  --nav-home-color: #ff6b6b;
+  --nav-home-hover: #ff5252;
+  --nav-home-bg: rgba(255, 107, 107, 0.15);
+  --nav-home-default: #ffffff;
+  
+  /* About - Ocean Blue */
+  --nav-about-color: #4fc3f7;
+  --nav-about-hover: #29b6f6;
+  --nav-about-bg: rgba(79, 195, 247, 0.15);
+  --nav-about-default: #ffffff;
+  
+  /* Tour Guide - Emerald Green */
+  --nav-tour-color: #66bb6a;
+  --nav-tour-hover: #43a047;
+  --nav-tour-bg: rgba(102, 187, 106, 0.15);
+  --nav-tour-default: #ffffff;
+  
+  /* Contact - Purple */
+  --nav-contact-color: #ab47bc;
+  --nav-contact-hover: #8e24aa;
+  --nav-contact-bg: rgba(171, 71, 188, 0.15);
+  --nav-contact-default: #ffffff;
+  
+  /* Login - Orange */
+  --nav-login-color: #ff9800;
+  --nav-login-hover: #fb8c00;
+  --nav-login-bg: rgba(255, 152, 0, 0.15);
+  --nav-login-default: #ffffff;
+  
+  /* Register - Teal/Cyan */
+  --nav-register-color: #26c6da;
+  --nav-register-hover: #00acc1;
+  --nav-register-bg: rgba(38, 198, 218, 0.15);
+  --nav-register-default: #0a1628;
+}
+
+/* Base Navbar */
+.modern-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+  padding-top: env(safe-area-inset-top);
+  /* Enhanced: Add subtle gradient background with glass effect */
+  background: linear-gradient(135deg, 
+    rgba(10, 22, 40, 0.85) 0%, 
+    rgba(15, 40, 71, 0.85) 50%, 
+    rgba(19, 78, 94, 0.85) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* Enhanced: Subtle shadow for better separation */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  transition: var(--nav-transition);
+}
+
+/* Initial state - keep gradient but adjust min-height */
+.modern-navbar:not(.scrolled) .navbar-container {
+  min-height: 70px;
+}
+
+/* Scrolled state - enhanced with stronger blur and shadow */
+.modern-navbar.scrolled {
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modern-navbar.scrolled .navbar-container {
+  min-height: 60px;
+}
+
+/* Logo */
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+/* Enhanced: Logo icon with glow effect */
+.logo-icon {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: var(--nav-transition);
+  text-shadow: 0 0 10px rgba(255, 167, 38, 0.3);
+}
+
+.navbar-logo:hover .logo-icon {
+  text-shadow: 0 0 20px rgba(255, 167, 38, 0.6), 
+               0 0 30px rgba(255, 167, 38, 0.4);
+  transform: scale(1.1);
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.logo-travel {
+  color: var(--nav-text-light);
+}
+
+.logo-world {
+  color: var(--nav-accent);
+  font-weight: 400;
+}
+
+/* Desktop Navigation */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  position: relative;
+  color: var(--nav-text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  transition: var(--nav-transition);
+  display: block;
+  border-radius: 8px;
+}
+
+/* Unique color for each navigation link - Base state */
+/* Home Link */
+.navbar-links li a.home-link {
+  background: var(--nav-home-bg);
+  color: var(--nav-home-color);
+}
+
+/* About Link */
+.navbar-links li a.about-link {
+  background: var(--nav-about-bg);
+  color: var(--nav-about-color);
+}
+
+/* Tour Guide Link */
+.navbar-links li a.tour-link {
+  background: var(--nav-tour-bg);
+  color: var(--nav-tour-color);
+}
+
+/* Contact Link */
+.navbar-links li a.contact-link {
+  background: var(--nav-contact-bg);
+  color: var(--nav-contact-color);
+}
+
+/* Login Link */
+.navbar-links li a.login-link {
+  background: var(--nav-login-bg);
+  color: var(--nav-login-color);
+}
+
+/* Hover effects - enhanced with glow and shadow */
+.navbar-links li a.home-link:hover,
+.navbar-links li a.home-link.active {
+  background: rgba(255, 107, 107, 0.3);
+  color: var(--nav-home-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.navbar-links li a.about-link:hover,
+.navbar-links li a.about-link.active {
+  background: rgba(79, 195, 247, 0.3);
+  color: var(--nav-about-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(79, 195, 247, 0.4);
+}
+
+.navbar-links li a.tour-link:hover,
+.navbar-links li a.tour-link.active {
+  background: rgba(102, 187, 106, 0.3);
+  color: var(--nav-tour-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 187, 106, 0.4);
+}
+
+.navbar-links li a.contact-link:hover,
+.navbar-links li a.contact-link.active {
+  background: rgba(171, 71, 188, 0.3);
+  color: var(--nav-contact-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(171, 71, 188, 0.4);
+}
+
+.navbar-links li a.login-link:hover,
+.navbar-links li a.login-link.active {
+  background: rgba(255, 152, 0, 0.3);
+  color: var(--nav-login-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+/* Click effect - temporarily change to default/normal color */
+.navbar-links li a.clicked {
+  transform: scale(0.95) !important;
+}
+
+/* Home clicked */
+.navbar-links li a.home-link.clicked {
+  background: var(--nav-home-default) !important;
+  color: var(--nav-primary-dark) !important;
+}
+
+/* About clicked */
+.navbar-links li a.about-link.clicked {
+  background: var(--nav-about-default) !important;
+  color: var(--nav-primary-dark) !important;
+}
+
+/* Tour clicked */
+.navbar-links li a.tour-link.clicked {
+  background: var(--nav-tour-default) !important;
+  color: var(--nav-primary-dark) !important;
+}
+
+/* Contact clicked */
+.navbar-links li a.contact-link.clicked {
+  background: var(--nav-contact-default) !important;
+  color: var(--nav-primary-dark) !important;
+}
+
+/* Login clicked */
+.navbar-links li a.login-link.clicked {
+  background: var(--nav-login-default) !important;
+  color: var(--nav-primary-dark) !important;
+}
+
+/* Underline animation */
+.link-underline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.navbar-links li a:hover .link-underline,
+.navbar-links li a.active .link-underline {
+  width: 80%;
+}
+
+/* Login link */
+.login-link a {
+  opacity: 0.9;
+}
+
+/* Register Button - Special styling with unique color */
+.register-btn {
+  background: linear-gradient(135deg, var(--nav-register-color), var(--nav-register-hover)) !important;
+  color: var(--nav-primary-dark) !important;
+  padding: 0.6rem 1.5rem !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(38, 198, 218, 0.4);
+  transition: var(--nav-transition) !important;
+}
+
+.register-btn::after {
+  display: none !important;
+}
+
+.register-btn:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 6px 25px rgba(38, 198, 218, 0.6) !important;
+  background: linear-gradient(135deg, var(--nav-register-hover), var(--nav-register-color)) !important;
+  color: var(--nav-primary-dark) !important;
+}
+
+.register-btn .link-underline {
+  display: none;
+}
+
+/* Register clicked - default color */
+.register-btn.clicked {
+  background: var(--nav-accent) !important;
+  transform: scale(0.95) !important;
+}
+
+/* Profile Button - Special styling */
+.profile-btn {
+  background: linear-gradient(135deg, var(--nav-accent), var(--nav-accent-dark)) !important;
+  color: var(--nav-primary-dark) !important;
+  padding: 0.6rem 1.5rem !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(255, 167, 38, 0.4);
+  transition: var(--nav-transition) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px;
+}
+
+.profile-btn::after {
+  display: none !important;
+}
+
+.profile-btn:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 6px 25px rgba(255, 167, 38, 0.6) !important;
+  background: linear-gradient(135deg, var(--nav-accent-glow), var(--nav-accent)) !important;
+  color: var(--nav-primary-dark) !important;
+}
+
+.profile-btn .link-underline {
+  display: none;
+}
+
+/* Profile clicked */
+.profile-btn.clicked {
+  background: var(--nav-accent) !important;
+  transform: scale(0.95) !important;
+}
+
+/* Hamburger Menu - Enhanced */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: var(--nav-transition);
+  z-index: 1001;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background: var(--nav-text-light);
+  transition: var(--nav-transition);
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu - Enhanced with gradient */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, 
+    rgba(10, 22, 40, 0.98) 0%, 
+    rgba(15, 40, 71, 0.98) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.mobile-links li a {
+  display: block;
+  color: var(--nav-text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 20px;
+  transition: var(--nav-transition);
+}
+
+/* Mobile unique colors */
+.mobile-links li a.home-link {
+  border-left: 3px solid var(--nav-home-color);
+}
+
+.mobile-links li a.about-link {
+  border-left: 3px solid var(--nav-about-color);
+}
+
+.mobile-links li a.tour-link {
+  border-left: 3px solid var(--nav-tour-color);
+}
+
+.mobile-links li a.contact-link {
+  border-left: 3px solid var(--nav-contact-color);
+}
+
+.mobile-links li a.login-link {
+  border-left: 3px solid var(--nav-login-color);
+}
+
+.mobile-links li a.home-link:hover,
+.mobile-links li a.home-link.active {
+  background: var(--nav-home-bg);
+  color: var(--nav-home-color);
+  padding-left: 30px;
+}
+
+.mobile-links li a.about-link:hover,
+.mobile-links li a.about-link.active {
+  background: var(--nav-about-bg);
+  color: var(--nav-about-color);
+  padding-left: 30px;
+}
+
+.mobile-links li a.tour-link:hover,
+.mobile-links li a.tour-link.active {
+  background: var(--nav-tour-bg);
+  color: var(--nav-tour-color);
+  padding-left: 30px;
+}
+
+.mobile-links li a.contact-link:hover,
+.mobile-links li a.contact-link.active {
+  background: var(--nav-contact-bg);
+  color: var(--nav-contact-color);
+  padding-left: 30px;
+}
+
+.mobile-links li a.login-link:hover,
+.mobile-links li a.login-link.active {
+  background: var(--nav-login-bg);
+  color: var(--nav-login-color);
+  padding-left: 30px;
+}
+
+.mobile-links .register-btn {
+  margin: 1rem 20px;
+  text-align: center;
+  display: block;
+  background: linear-gradient(135deg, var(--nav-register-color), var(--nav-register-hover)) !important;
+  color: var(--nav-primary-dark) !important;
+}
+
+.mobile-links .register-btn:hover {
+  background: linear-gradient(135deg, var(--nav-register-hover), var(--nav-register-color)) !important;
+  padding-left: 20px;
+}
+
+/* Mobile Profile Button */
+.mobile-links .profile-btn {
+  margin: 1rem 20px;
+  text-align: center;
+  display: block;
+  background: linear-gradient(135deg, var(--nav-accent), var(--nav-accent-dark)) !important;
+  color: var(--nav-primary-dark) !important;
+}
+
+.mobile-links .profile-btn:hover {
+  background: linear-gradient(135deg, var(--nav-accent-glow), var(--nav-accent)) !important;
+  padding-left: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-container {
+    padding: 0 15px;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    min-height: 60px;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo-icon {
+    font-size: 1.3rem;
+  }
+}
+
+/* Accessibility */
+.hamburger:focus-visible,
+.navbar-links a:focus-visible {
+  outline: 2px solid var(--nav-accent);
+  outline-offset: 2px;
+}
+
+/* Subtle floating animation for logo */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.navbar-logo {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* ===== ABOUT PAGE THEME ===== */
+.modern-navbar.theme-about {
+  background: linear-gradient(135deg, 
+    rgba(19, 78, 94, 0.9) 0%, 
+    rgba(26, 107, 124, 0.9) 50%, 
+    rgba(38, 198, 218, 0.85) 100%
+  );
+}
+
+.modern-navbar.theme-about.scrolled {
+  background: rgba(19, 78, 94, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.modern-navbar.theme-about .logo-travel {
+  color: #fff;
+}
+
+.modern-navbar.theme-about .logo-world {
+  color: #ffa726;
+}
+
+/* Enhanced logo glow for About theme */
+.modern-navbar.theme-about .logo-icon {
+  text-shadow: 0 0 15px rgba(38, 198, 218, 0.5);
+}
+
+.modern-navbar.theme-about:hover .logo-icon {
+  text-shadow: 0 0 25px rgba(38, 198, 218, 0.8), 
+               0 0 35px rgba(38, 198, 218, 0.5);
+}
+
+/* Register button for About page - enhanced styling */
+.modern-navbar.theme-about .register-btn {
+  background: linear-gradient(135deg, #26c6da, #00acc1) !important;
+  padding: 10px 24px !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  box-shadow: 0 4px 20px rgba(38, 198, 218, 0.5) !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.modern-navbar.theme-about .register-btn:hover {
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(38, 198, 218, 0.7) !important;
+  background: linear-gradient(135deg, #00acc1, #26c6da) !important;
+}
+
+.modern-navbar.theme-about .mobile-menu {
+  background: linear-gradient(180deg, 
+    rgba(19, 78, 94, 0.98) 0%, 
+    rgba(26, 107, 124, 0.98) 100%
+  );
+}
+
+/* ===== DARK THEME ===== */
+.modern-navbar.theme-dark {
+  background: linear-gradient(135deg, 
+    rgba(10, 22, 40, 0.95) 0%, 
+    rgba(15, 32, 60, 0.95) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
