@@ -9,6 +9,7 @@ import ResetPassword from './views/reset-password';
 import ForgotPassword from './views/forgot-password';
 import Profile from './views/profile';
 import Navbar from './components/Navbar';
+import PaymentIntegration from './views/PaymentIntegration';  
 
 import { Toaster } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
@@ -42,6 +43,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/PaymentIntegration" element={<PaymentIntegration userId="" userName="" tourName="" amount={0} />} />
       </Routes>
 
       <Toaster
