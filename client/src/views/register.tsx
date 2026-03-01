@@ -144,7 +144,7 @@ const Register: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <h2>Create Account 🌟</h2>
+              <h2>Create Account</h2>
               <p className="subtitle">Register to start your journey</p>
             </motion.div>
 

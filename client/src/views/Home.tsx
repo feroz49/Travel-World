@@ -2,6 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../css/home.css';
+import traveler from '../images/traveler.jpg';
+import sylhet1 from "../images/sylhet1.jpg";
+import cox1 from "../images/coxx.jpg";
+import cox from "../images/cox.jpg";
+import sylhet2 from "../images/Jaflong.jpeg";
+import sylhet3 from "../images/sylhet2.jpeg";
+import bandarban1 from "../images/Bandarban1.jpeg";
+import bandarban4 from "../images/Bandarban4.jpeg";
+import sundarban1 from "../images/sundarban1.jpeg";
+import sundarban2 from "../images/sundarban2.jpeg";
+
 
 // Animation variants
 const fadeUp = {
@@ -48,33 +59,34 @@ const Home: React.FC = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
-      title: "Swiss Alps",
-      location: "Switzerland",
+      src: sylhet1,
+      title: "Bholaganj Sada Pathor",
+      location: "Sylhet,Bangladesh",
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
-      title: "Tropical Beach",
-      location: "Maldives",
+      src: cox1,
+      title: "Sea Beach",
+      location: "Cox's Bazar,Bangladesh",
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80",
-      title: "Kyoto Temples",
-      location: "Japan",
+      src: sylhet3,
+      title: "Ratargul Swamp Forest",
+      location: "Sylhet,Bangladesh",
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=600&q=80",
-      title: "Santorini Sunset",
-      location: "Greece",
+      src: sundarban2,
+      title: "Mangrove Forest",
+      location: "Sundarban,Bangladesh",
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80",
-      title: "Paris Lights",
-      location: "France",
+      src: bandarban4,
+      title: "Debotakhum",
+      location: "Bandarban,Bangladesh",
+
     },
   ];
 
@@ -82,38 +94,38 @@ const Home: React.FC = () => {
   const popularDestinations = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80",
-      title: "Bali Paradise",
-      country: "Indonesia",
-      price: "$1,299",
-      duration: "7 Days",
+      src: cox,
+      title: "Cox's Bazar",
+      country: "Bangladesh",
+      price: "12,000 BDT",
+      duration: "5 Days",
       rating: 4.9
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80",
-      title: "Tokyo Adventure",
-      country: "Japan",
-      price: "$2,499",
-      duration: "10 Days",
+      src: sylhet2,
+      title: "Sylhet",
+      country: "Bangladesh",
+      price: "10,000 BDT",
+      duration: "5 Days",
       rating: 4.8
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
-      title: "Dubai Luxury",
-      country: "UAE",
-      price: "$3,199",
+      src: bandarban1,
+      title: "Bandarban",
+      country: "Bangladesh",
+      price: "10,000 BDT",
       duration: "5 Days",
       rating: 4.9
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=600&q=80",
-      title: "Venice Dreams",
-      country: "Italy",
-      price: "$2,799",
-      duration: "8 Days",
+      src: sundarban1,
+      title: "Sundarban",
+      country: "Bangladesh",
+      price: "12,000 BDT",
+      duration: "5 Days",
       rating: 4.7
     }
   ];
